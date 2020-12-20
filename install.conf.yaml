@@ -25,17 +25,11 @@
     ~/.gitattributes_global: config/gitattributes
 
     # Tools:
-    ~/.psqlrc: config/psqlrc
     ~/.sqliterc: config/sqliterc
 
     # Editors:
     ~/.editorconfig: config/editorconfig
     ~/.nanorc: config/nanorc
-
-# Installing dependencies:
-- brewfile:
-    file: Brewfile
-    no-upgrage: true
 
 # These links should be created after everything is installed:
 - link:
@@ -44,19 +38,21 @@
 # Setting up vscode:
 - link:
     # vscode:
-    "~/Library/Application Support/Code/User/settings.json":
-        path: vscode/settings.json
-        create: true
-    "~/Library/Application Support/Code/User/keybindings.json":
-        path: vscode/keybindings.json
-        create: true
-    "~/Library/Application Support/Code/User/snippets":
-        path: vscode/snippets
-        create: true
+    # "~/Library/Application Support/Code/User/settings.json":
+    #    path: vscode/settings.json
+    #    create: true
+    # "~/Library/Application Support/Code/User/keybindings.json":
+    #    path: vscode/keybindings.json
+    #    create: true
+    # "~/Library/Application Support/Code/User/snippets":
+    #    path: vscode/snippets
+    #    create: true
+- aptget:
+  - vim
 
 - shell:
+  - [curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh, Installing Oh My Zsh]
+  - [curl -sfL git.io/antibody | sh -s - -b /usr/local/bin, Installing antibody]
+  - [curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash, Installing NVM]
+  - [bash ./python/install.sh, Installing pipenv]
   - [bash ./vscode/install.sh, Installing vscode extensions]
-
-# Cleaning up:
-- shell:
-  - [brew cleanup, Cleaning up]

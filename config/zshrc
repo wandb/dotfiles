@@ -32,7 +32,6 @@ HIST_IGNORE_SPACE="true"
 
 plugins=(
   gitfast
-  osx
 )
 
 # User configuration:
