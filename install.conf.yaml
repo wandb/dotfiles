@@ -3,6 +3,11 @@
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
   - [mkdir -p ~/.gnupg]
+  - [apt update && apt install -y vim zsh]
+  - [alias python=python3 bash ./python/install.sh, Installing pyenv]
+  - [curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | bash, Installing Oh My Zsh]
+  - [curl -sfL git.io/antibody | sh -s - -b /usr/local/bin, Installing antibody]
+  - [rm -rf ~/.zshrc]
 
 - link:
     # Terminal:
@@ -11,13 +16,9 @@
       create: true
     ~/.shell_env: config/shell_env
     ~/.bash_profile: config/bash_profile
-    ~/.bashrc: config/bashrc
     ~/.zshrc: config/zshrc
     ~/.hushlogin: config/hushlogin
     ~/.antibody: config/antibody.txt
-
-    # SSH:
-    ~/.ssh/config: config/ssh_config
 
     # Git:
     ~/.gitconfig: config/gitconfig
@@ -35,23 +36,6 @@
 - link:
     ~/.gnupg/gpg-agent.conf: config/gpgagent
 
-# Setting up vscode:
-- link:
-    # vscode:
-    # "~/Library/Application Support/Code/User/settings.json":
-    #    path: vscode/settings.json
-    #    create: true
-    # "~/Library/Application Support/Code/User/keybindings.json":
-    #    path: vscode/keybindings.json
-    #    create: true
-    # "~/Library/Application Support/Code/User/snippets":
-    #    path: vscode/snippets
-    #    create: true
-
 - shell:
-  - [apt update && apt install -y vim zsh]
-  - [curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | bash, Installing Oh My Zsh]
-  - [curl -sfL git.io/antibody | sh -s - -b /usr/local/bin, Installing antibody]
   - [curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash, Installing NVM]
-  - [bash ./python/install.sh, Installing pyenv]
   - [bash ./vscode/install.sh, Installing vscode extensions]
