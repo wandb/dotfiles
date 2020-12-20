@@ -2,6 +2,7 @@
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
+  - [mkdir -p ~/.gnupg]
 
 - link:
     # Terminal:
@@ -14,7 +15,6 @@
     ~/.zshrc: config/zshrc
     ~/.hushlogin: config/hushlogin
     ~/.antibody: config/antibody.txt
-    ~/.hyper.js: config/hyper.js
 
     # SSH:
     ~/.ssh/config: config/ssh_config
