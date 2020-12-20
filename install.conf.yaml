@@ -47,8 +47,9 @@
     # "~/Library/Application Support/Code/User/snippets":
     #    path: vscode/snippets
     #    create: true
-- aptget:
+- apt:
   - vim
+  - zsh
 
 - shell:
   - [curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh, Installing Oh My Zsh]
