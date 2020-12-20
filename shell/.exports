@@ -31,7 +31,7 @@ PATH="$PATH:$HOME/.poetry/bin"
 PATH="/usr/local/share/npm/bin:$PATH"
 
 # python2 (required by npm and other tools, installed via pyenv):
-PATH="$PATH:$HOME/.pyenv/versions/2.7.17/bin"
+# PATH="$PATH:$HOME/.pyenv/versions/2.7.17/bin"
 
 export PATH
 
@@ -69,10 +69,12 @@ export MANPAGER='less'
 
 # nvm:
 export NVM_DIR="$HOME/.nvm"
-source "/usr/local/opt/nvm/nvm.sh"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
 # pyenv:
+export PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 
 
 # === Histories ===

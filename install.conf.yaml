@@ -47,13 +47,11 @@
     # "~/Library/Application Support/Code/User/snippets":
     #    path: vscode/snippets
     #    create: true
-- apt:
-  - vim
-  - zsh
 
 - shell:
-  - [curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh, Installing Oh My Zsh]
+  - [apt update && apt install -y vim zsh]
+  - [curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | bash, Installing Oh My Zsh]
   - [curl -sfL git.io/antibody | sh -s - -b /usr/local/bin, Installing antibody]
   - [curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash, Installing NVM]
-  - [bash ./python/install.sh, Installing pipenv]
+  - [bash ./python/install.sh, Installing pyenv]
   - [bash ./vscode/install.sh, Installing vscode extensions]
